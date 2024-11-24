@@ -5,6 +5,7 @@ public abstract class Pessoa {
     protected String nome;
     protected int telefone;
     protected int idade;
+    private Object nomeTutor;
 
     public Pessoa(int cpf, String nome, int telefone, int idade) {
         this.cpf = cpf;
@@ -45,5 +46,9 @@ public abstract class Pessoa {
 
     public void setIdade(int idade) {
         this.idade = idade;
+    }
+
+    public void setNomeTutor(String next) {
+        this.nomeTutor = nomeTutor;
     }
 }
