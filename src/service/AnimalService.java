@@ -17,7 +17,23 @@ public class AnimalService {
     }
 
     //UPDATE
-
+    public void atualizarNome(String nomeAnimal, String novoNome){
+        for(Animal animal : animais) {
+            if(animal.getNomeAnimal().equalsIgnoreCase(nomeAnimal))  {
+                animal.setNomeAnimal(novoNome);
+                System.out.println("Nome do animal atualizado com sucesso!");
+            } else {
+                System.out.println("Animal não encontrado, por favor, tente novamente!");
+            }
+        }
+    }
     //DELETE
-
+    public void deletarAnimal(String nomeAnimal){
+        boolean animalRemovido = animais.removeIf(animal -> animal.getNomeAnimal().equalsIgnoreCase(nomeAnimal));
+        if (animalRemovido) {
+            System.out.println("Animal removido do banco de dados com sucesso");
+        } else {
+            System.out.println("Animal não encontrado, por favor, tente novamente!");
+        }
+    }
 }

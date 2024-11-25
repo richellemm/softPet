@@ -78,4 +78,7 @@ public class Animal {
                 ", idade=" + idade +
                 '}';
     }
+
+    public void deletarAnimal(String nomeAnimal) {
+    }
 }

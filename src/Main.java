@@ -1,5 +1,4 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 import model.*;
 import service.AnimalService;
 
@@ -42,8 +41,13 @@ public class Main {
         System.out.println("Digite o nome do funcionário que irá realizar o serviço:");
         pF.setNome(sc.next());
 
-        as.cadastrarAnimal(a); // Use o objeto "as" para cadastrar o animal
+        as.cadastrarAnimal(a);
         System.out.println("Animais cadastrados:");
-        System.out.println(as.listar()); // Lista os animais cadastrados
-        }
+        System.out.println(as.listar());
+
+
+        System.out.println("Digite o nome do animal que deseja deletar: ");
+        String nomeAnimal = sc.next();
+        a.deletarAnimal(nomeAnimal);
     }
+}
