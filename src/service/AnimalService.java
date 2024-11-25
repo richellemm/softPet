@@ -11,12 +11,10 @@ public class AnimalService {
         System.out.println("Animal cadastrado com sucesso!");
     }
 
-    //GET
     public ArrayList<Animal>listar(){
         return animais;
     }
 
-    //UPDATE
     public void atualizarNome(String nomeAnimal, String novoNome){
         for(Animal animal : animais) {
             if(animal.getNomeAnimal().equalsIgnoreCase(nomeAnimal))  {
@@ -27,13 +25,17 @@ public class AnimalService {
             }
         }
     }
-    //DELETE
-    public void deletarAnimal(String nomeAnimal){
-        boolean animalRemovido = animais.removeIf(animal -> animal.getNomeAnimal().equalsIgnoreCase(nomeAnimal));
-        if (animalRemovido) {
-            System.out.println("Animal removido do banco de dados com sucesso");
-        } else {
-            System.out.println("Animal não encontrado, por favor, tente novamente!");
+    public void deletarAnimal(String nome) {
+
+        for (int i = 0; i < animais.size(); i++) {
+
+            if (animais.get(i).getNomeAnimal().equalsIgnoreCase(nome)) {
+                animais.remove(i);
+                System.out.println("Animal removido do banco de dados com sucesso");
+
+            } else {
+                System.out.println("Animal não encontrado, por favor, tente novamente!");
+            }
         }
     }
 }

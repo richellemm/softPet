@@ -49,5 +49,9 @@ public class Main {
         System.out.println("Digite o nome do animal que deseja deletar: ");
         String nomeAnimal = sc.next();
         a.deletarAnimal(nomeAnimal);
+
+        System.out.println("Digite o nome do animal que deseja deletar: ");
+        String nomeAnimal = sc.next();
+        a.deletarAnimal(nomeAnimal);
     }
 }
