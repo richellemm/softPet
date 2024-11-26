@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Animal {
     private String nomeTutor;
     private String nomeAnimal;
@@ -8,7 +10,15 @@ public class Animal {
     private double peso;
     private String cor;
     private double idade;
+    private Cliente cliente;
 
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
 
     public String getNomeTutor() {
         return nomeTutor;
@@ -66,6 +76,17 @@ public class Animal {
         this.idade = idade;
     }
 
+    public void associarClientePorCPF(int cpf, ArrayList<Cliente> clientes) {
+        for (Cliente c : clientes) {
+            if (c.getCpf() == cpf) {
+                this.cliente = c;
+                System.out.println("Animal associado ao cliente: " + c.getNome());
+                return;
+            }
+        }
+        System.out.println("Cliente com CPF " + cpf + " não encontrado.");
+    }
+
     @Override
     public String toString() {
         return "Animal{" +
@@ -76,9 +97,13 @@ public class Animal {
                 ", peso=" + peso +
                 ", cor='" + cor + '\'' +
                 ", idade=" + idade +
+                ", cliente=" + cliente +
                 '}';
     }
 
     public void deletarAnimal(String nomeAnimal) {
+    }
+
+    public void atualizarNome(String nomeAnimal, String novoNome) {
     }
 }

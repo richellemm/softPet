@@ -1,0 +1,111 @@
+MAIN
+//
+//            switch (y) {
+//                case 1:
+//                    System.out.println("Digite 1 para cadastrar cliente, digite 2 para escolher serviço, digite 3 nome do funcionário:");
+//                    int z = sc.nextInt();
+//                    switch (z) {
+//                        case 1:
+//
+//                            System.out.println("Digite o nome do tutor:");
+//                            pC.setNomeTutor(sc.next());
+//
+//                            System.out.println("Digite o nome do animal:");
+//                            a.setNomeAnimal(sc.next());
+//
+//                            System.out.println("Digite a idade do animal:");
+//                            a.setIdade(sc.nextDouble());
+//
+//                            System.out.println("Digite a raça do animal:");
+//                            a.setRaca(sc.next());
+//
+//                            System.out.println("Digite a espécie do animal:");
+//                            a.setEspecie(sc.next());
+//
+//                            System.out.println("Digite o peso do animal:");
+//                            a.setPeso(sc.nextDouble());
+//
+//                            System.out.println("Digite a cor do animal:");
+//                            a.setCor(sc.next());
+//                            break;
+//
+//                        case 2:
+//                            System.out.println("Digite qual serviço será realizado:");
+//                            s.setServico(sc.next());
+//                            break;
+//
+//                        case 3:
+//                            System.out.println("Digite o nome do funcionário que irá realizar o serviço:");
+//                            pF.setNome(sc.next());
+//                            break;
+//
+//                        default:
+//                            System.out.println("Opção inválida.");
+//                    }
+//                    break;
+//
+//                case 2:
+//                    System.out.print("Digite para atualizar: ");
+//                    String nomeAnimal = sc.next();
+//                    System.out.print("Digite o novo nome da pessoa: ");
+//                    String novoNome = sc.next();
+//                    a.atualizarNome(nomeAnimal, novoNome);
+//                    break;
+//
+//                case 3:
+//                    System.out.print("Digite o nome da pessoa que deseja deletar: ");
+//                    String nomeDeletar = sc.next();
+//                    a.deletarAnimal(nomeDeletar);
+//                    break;
+//
+//                default:
+//                    System.out.println("Opção inválida.");
+//            }
+//            System.out.println("Para ver novamente digite 0");
+//            r = sc.nextInt();
+//        } while (r == 0);
+//    }
+//}
+
+
+
+
+//        System.out.println("Digite o seu nome:");
+//        pC.setNomeTutor(sc.next());
+//
+//        System.out.println("Digite o nome do seu pet:");
+//        a.setNomeAnimal(sc.next());
+//
+//        System.out.println("Digite a idade do seu pet:");
+//        a.setIdade(sc.nextDouble());
+//
+//        System.out.println("Digite a raça do seu pet:");
+//        a.setRaca(sc.next());
+//
+//        System.out.println("Digite a espécie do seu pet:");
+//        a.setEspecie(sc.next());
+//
+//        System.out.println("Digite o peso do seu pet:");
+//        a.setPeso(sc.nextDouble());
+//
+//        System.out.println("Digite a cor do seu pet:");
+//        a.setCor(sc.next());
+//
+//        System.out.println("Digite qual serviço será realizado:");
+//        s.setServico(sc.next());
+//
+//        System.out.println("Digite o nome do funcionário que irá realizar o serviço:");
+//        pF.setNome(sc.next());
+//
+//        as.cadastrarAnimal(a);
+//        System.out.println("Animais cadastrados:");
+//        System.out.println(as.listar());
+//
+//        System.out.println("Digite o nome do animal que deseja deletar: ");
+//        String nomeAnimal = sc.next();
+//        a.deletarAnimal(nomeAnimal);
+
+//    }
+//}
+
+
