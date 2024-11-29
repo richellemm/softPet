@@ -1,13 +1,14 @@
 package model;
 
 public abstract class Pessoa {
-    protected int cpf;
+    protected String cpf;
     protected String nome;
     protected int telefone;
     protected int idade;
+    private String email;
     private Object nomeTutor;
 
-    public Pessoa(int cpf, String nome, int telefone, int idade) {
+    public Pessoa(String cpf, String nome, int telefone, int idade) {
         this.cpf = cpf;
         this.nome = nome;
         this.telefone = telefone;
@@ -15,6 +16,14 @@ public abstract class Pessoa {
     }
 
     public Pessoa(){}
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public String getNome() {
         return nome;
@@ -24,11 +33,11 @@ public abstract class Pessoa {
         this.nome = nome;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -50,5 +59,19 @@ public abstract class Pessoa {
 
     public void setNomeTutor(String next) {
         this.nomeTutor = nomeTutor;
+    }
+
+    public abstract void quemSouEu();
+
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "cpf=" + cpf +
+                ", nome='" + nome + '\'' +
+                ", telefone=" + telefone +
+                ", idade=" + idade +
+                ", email='" + email + '\'' +
+                ", nomeTutor=" + nomeTutor +
+                '}';
     }
 }

@@ -7,16 +7,18 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+//        Cliente c = new Cliente();
+//        Pessoa pF = new Funcionario();
+//        Animal a = new Animal();
+
         Scanner sc2 = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         Pessoa pC = new Cliente();
-        Pessoa pF = new Funcionario();
-        Animal a = new Animal();
+        Funcionario f = new Funcionario();
         Servico s = new Servico();
         AnimalService as = new AnimalService();
 
-        ArrayList<Pessoa> clientes = new ArrayList<>();
-        ArrayList<Funcionario> funcionarios = new ArrayList<>();
+        ArrayList<Cliente> clientes = new ArrayList<>();
 
         int y;
 
@@ -35,18 +37,25 @@ public class Main {
             switch (y) {
                 case 1 -> {
                     System.out.println("--- Cadastro de Cliente ---");
+                    Cliente c = new Cliente();
                     System.out.print("Nome: ");
-                    String nome = sc2.nextLine();
+                    c.setNome(sc.nextLine());
+                    sc.nextLine();
                     System.out.print("CPF: ");
-                    int cpf = sc.nextInt();
+                    c.setCpf(sc.next());
+                    clientes.add(c);
                     System.out.print("Email: ");
-                    String email = sc2.nextLine();
+                    c.setEmail(sc.nextLine());
+                    sc.nextLine();
                     System.out.print("Telefone: ");
-                    int telefone = sc.nextInt();
+                    c.setTelefone(sc.nextInt());
+                    sc.nextLine();
                     System.out.print("Endereço: ");
-                    String endereco = sc2.nextLine();
-                    clientes.add(pC);
+                    c.setEndereco(sc.nextLine());
+
+                    clientes.add(c);
                     System.out.println("Cliente cadastrado com sucesso!");
+                    c = new Cliente();
                 }
                 case 2 -> {
                     if (clientes.isEmpty()) {
@@ -54,30 +63,60 @@ public class Main {
                         break;
                     }
                     System.out.print("CPF do tutor: ");
-                    int cpf = sc.nextInt();
-                    Cliente cliente = associarClientePorCPF(cpf, clientes);
+                    String cpf = sc.next().trim();
+                    Pessoa c = buscarClientePorCPF(cpf, clientes);
 
-                    if (cliente == null) {
+                    if (c == null) {
                         System.out.println("Cliente não encontrado!");
                         break;
                     }
-
-
-                    System.out.println("--- Cadastro de Animal ---");
+                    System.out.println("Cliente encontrado. Siga para cadastro de animal!");
+//                    System.out.println("--- Cadastro de Animal ---");
+                    Animal a = new Animal();
+                    a.setCliente((Cliente) c);
+                    a.setNomeTutor(c.getNome());
                     System.out.print("Nome do Animal: ");
-                    String nomeAnimal = sc2.nextLine();
+                    a.setNomeAnimal(sc.nextLine());
+                    sc.nextLine();
                     System.out.print("Espécie: ");
-                    String especie = sc2.nextLine();
+                    a.setEspecie(sc.nextLine());
                     System.out.print("Raça: ");
-                    int raca = sc.nextInt();
+                    a.setRaca(sc.nextLine());
                     System.out.print("Cor: ");
-                    String cor = sc2.nextLine();
+                    a.setCor(sc.nextLine());
                     System.out.print("Idade: ");
-                    double idade = sc.nextDouble();
-                    System.out.println("Animal cadastrado com sucesso!");
+                    a.setIdade(sc.nextDouble());
+                    System.out.print("Peso: ");
+                    a.setPeso(sc.nextDouble());
+
+                    System.out.println("Animal cadastrado com sucesso! CPF do tutor do animal: " + c.getCpf());
                 }
                 case 3 -> {
                     System.out.println("--- Cadastro de Funcionário ---");
+                    Pessoa pF = new Funcionario();
+                    System.out.print("Nome: ");
+                    pF.setNome(sc2.nextLine());
+                    System.out.print("CPF: ");
+                    pF.setCpf(sc2.nextLine());
+                    System.out.print("Email: ");
+                    pF.setEmail(sc2.nextLine());
+                    System.out.print("Telefone: ");
+                    pF.setTelefone(sc.nextInt());
+                    System.out.print("Salário: ");
+                    f.setSalario(sc.nextInt());
+                    System.out.print("Matrícula: ");
+                    f.setMatricula(sc.nextInt());
+                    System.out.print("Idade: ");
+                    pF.setIdade(sc.nextInt());
+                    System.out.println("Funcionário cadastrado com sucesso!");
+                    pF.quemSouEu();
+                    System.out.println("CPF: " + pF.getCpf());
+                    System.out.println("Email: " + pF.getEmail());
+                    System.out.println("Telefone: " + pF.getTelefone());
+                    System.out.println("Salário: " + f.getSalario());
+                    System.out.println("Matrícula: " + f.getMatricula());
+                    System.out.println("Idade: " + pF.getIdade());
+                    System.out.println("A função deste funcionário é " + CARGO.Atendente);
                 }
                 case 4 -> {
                     System.out.println("--- Atualizar Dados de um Animal ---");
@@ -95,9 +134,16 @@ public class Main {
         } while (y != 7);
 
         sc.close();
+        sc2.close();
     }
 
-    private static Cliente associarClientePorCPF(int cpf, ArrayList<Pessoa> clientes) {
+
+    private static Pessoa buscarClientePorCPF(String cpf, ArrayList<Cliente> clientes) {
+        for (Cliente cliente : clientes) {
+            if (cliente.getCpf().equals(cpf)) {
+                return cliente;
+            }
+        }
         return null;
     }
 }

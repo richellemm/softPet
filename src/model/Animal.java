@@ -76,16 +76,16 @@ public class Animal {
         this.idade = idade;
     }
 
-    public void associarClientePorCPF(int cpf, ArrayList<Cliente> clientes) {
-        for (Cliente c : clientes) {
-            if (c.getCpf() == cpf) {
-                this.cliente = c;
-                System.out.println("Animal associado ao cliente: " + c.getNome());
-                return;
-            }
-        }
-        System.out.println("Cliente com CPF " + cpf + " não encontrado.");
-    }
+//    public static Cliente associarClientePorCPF(String cpf, ArrayList<Cliente> clientes) {
+//        for (Cliente c : clientes) {
+//            if (c.getCpf().equals(cpf)) {
+//                System.out.println("Animal associado ao cliente: " + c.getNome());
+//                return c;
+//            }
+//        }
+//        System.out.println("Cliente com CPF " + cpf + " não encontrado.");
+//        return null;
+//    }
 
     @Override
     public String toString() {
