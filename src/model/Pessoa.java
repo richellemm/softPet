@@ -4,6 +4,15 @@ public abstract class Pessoa {
     protected String cpf;
     protected String nome;
     protected int telefone;
+
+    public Object getNomeTutor() {
+        return nomeTutor;
+    }
+
+    public void setNomeTutor(Object nomeTutor) {
+        this.nomeTutor = nomeTutor;
+    }
+
     protected int idade;
     private String email;
     private Object nomeTutor;

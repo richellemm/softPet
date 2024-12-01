@@ -76,29 +76,18 @@ public class Animal {
         this.idade = idade;
     }
 
-//    public static Cliente associarClientePorCPF(String cpf, ArrayList<Cliente> clientes) {
-//        for (Cliente c : clientes) {
-//            if (c.getCpf().equals(cpf)) {
-//                System.out.println("Animal associado ao cliente: " + c.getNome());
-//                return c;
-//            }
-//        }
-//        System.out.println("Cliente com CPF " + cpf + " não encontrado.");
-//        return null;
-//    }
 
     @Override
     public String toString() {
-        return "Animal{" +
-                "nomeTutor='" + nomeTutor + '\'' +
-                ", nomeAnimal='" + nomeAnimal + '\'' +
-                ", especie='" + especie + '\'' +
-                ", raca='" + raca + '\'' +
-                ", peso=" + peso +
-                ", cor='" + cor + '\'' +
-                ", idade=" + idade +
-                ", cliente=" + cliente +
-                '}';
+        return "Informações do Animal:\n" +
+                "  Nome do Animal: " + nomeAnimal + "\n" +
+                "  Espécie: " + especie + "\n" +
+                "  Raça: " + raca + "\n" +
+                "  Cor: " + cor + "\n" +
+                "  Idade (meses): " + idade + "\n" +
+                "  Peso (kg): " + peso + "\n" +
+                "  Telefone do Tutor: " + (cliente != null ? cliente.getTelefone() : "Não informado") + "\n" +
+                "  CPF do Tutor: " + (cliente != null ? cliente.getCpf() : "Não informado") + "\n";
     }
 
     public void deletarAnimal(String nomeAnimal) {

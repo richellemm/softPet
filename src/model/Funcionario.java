@@ -1,8 +1,12 @@
 package model;
 
-public final class Funcionario extends Pessoa {
-    private int matricula;
+import enums.CARGO;
+
+public final class Funcionario extends Pessoa implements Remuneravel {
+    private String matricula;
     private int salario;
+    private int salarioBonus;
+    private CARGO cargo;
 
     public int isSalario() {
         return salario;
@@ -16,11 +20,19 @@ public final class Funcionario extends Pessoa {
         this.salario = salario;
     }
 
-    public int getMatricula() {
+    public void setCargo(CARGO cargo) {
+        this.cargo = cargo;
+    }
+
+    public CARGO getCargo() {
+        return this.cargo;
+    }
+
+    public String getMatricula() {
         return matricula;
     }
 
-    public void setMatricula(int matricula) {
+    public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
 
@@ -39,5 +51,11 @@ public final class Funcionario extends Pessoa {
                 ", nome='" + nome + '\'' +
                 ", cpf=" + cpf +
                 '}';
+    }
+
+    @Override
+    public void aplicarBonus() {
+        salarioBonus = salario + 100;
+        System.out.println("Salario com bonus é igual: " + salarioBonus);
     }
 }

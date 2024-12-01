@@ -6,4 +6,5 @@ public enum CARGO {
     Gerente,
     Tosador,
     Veterinario,
+    Banhista,
 }
