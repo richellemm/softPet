@@ -87,10 +87,4 @@ public class Animal {
                 "  Telefone do Tutor: " + (cliente != null ? cliente.getTelefone() : "Não informado") + "\n" +
                 "  CPF do Tutor: " + (cliente != null ? cliente.getCpf() : "Não informado") + "\n";
     }
-
-    public void deletarAnimal(String nomeAnimal) {
-    }
-
-    public void atualizarNome(String nomeAnimal, String novoNome) {
-    }
 }
