@@ -5,7 +5,6 @@ import enums.CARGO;
 public final class Funcionario extends Pessoa implements Remuneravel {
     private String matricula;
     private int salario;
-    private int salarioBonus;
     private CARGO cargo;
 
     public int isSalario() {
@@ -55,7 +54,7 @@ public final class Funcionario extends Pessoa implements Remuneravel {
 
     @Override
     public void aplicarBonus() {
-        salarioBonus = salario + 100;
+        int salarioBonus = salario + 100;
         System.out.println("Salario com bonus é igual: " + salarioBonus);
     }
 }

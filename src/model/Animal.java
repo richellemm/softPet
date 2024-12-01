@@ -1,7 +1,5 @@
 package model;
 
-import java.util.ArrayList;
-
 public class Animal {
     private String nomeTutor;
     private String nomeAnimal;

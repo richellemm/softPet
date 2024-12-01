@@ -5,7 +5,7 @@ import model.Animal;
 import java.util.ArrayList;
 
 public class AnimalService {
-    private ArrayList<Animal> animais = new ArrayList<>();
+    private final ArrayList<Animal> animais = new ArrayList<>();
 
 
     public void cadastrarAnimal(Animal a) {

@@ -66,10 +66,6 @@ public abstract class Pessoa {
         this.idade = idade;
     }
 
-    public void setNomeTutor(String next) {
-        this.nomeTutor = nomeTutor;
-    }
-
     public abstract void quemSouEu();
 
     @Override

@@ -1,4 +1,5 @@
 import enums.CARGO;
+import enums.SERVICO;
 import model.*;
 import service.AnimalService;
 
@@ -11,8 +12,6 @@ public class Main {
 
         Scanner sc2 = new Scanner(System.in);
         Scanner sc = new Scanner(System.in);
-        Pessoa pC = new Cliente();
-        Servico s = new Servico();
         AnimalService as = new AnimalService();
 
         ArrayList<Cliente> clientes = new ArrayList<>();
@@ -54,7 +53,6 @@ public class Main {
 
                     clientes.add(c);
                     System.out.println("Cliente cadastrado com sucesso!");
-                    c = new Cliente();
                 }
                 case 2 -> {
                     if (clientes.isEmpty()) {
@@ -88,11 +86,11 @@ public class Main {
                     a.setPeso(sc.nextDouble());
                     as.cadastrarAnimal(a);
                     System.out.println(as.listar());
-                    System.out.println(" Animal cadastrado em tutor com CPF:" + c.getCpf());
+                    System.out.println("Animal cadastrado ao tutor com CPF nº" + c.getCpf());
                 }
                 case 3 -> {
                     System.out.println("--- Cadastro de Funcionário ---");
-                    Pessoa pF = new Funcionario();
+                    Funcionario pF = new Funcionario();
                     System.out.print("Nome: ");
                     pF.setNome(sc2.nextLine());
                     System.out.print("CPF: ");
@@ -103,10 +101,10 @@ public class Main {
                     pF.setTelefone(sc.nextInt());
                     sc.nextLine();
                     System.out.print("Salário: ");
-                    ((Funcionario) pF).setSalario(sc.nextInt());
+                    pF.setSalario(sc.nextInt());
                     sc.nextLine();
                     System.out.print("Matrícula: ");
-                    ((Funcionario) pF).setMatricula(sc2.nextLine());
+                    pF.setMatricula(sc2.nextLine());
                     System.out.print("Idade: ");
                     pF.setIdade(sc.nextInt());
 
@@ -136,16 +134,16 @@ public class Main {
                         System.out.println("Opção inválida!");
                         return;
                     }
-                    ((Funcionario) pF).setCargo(cargoEscolhido);
-                    funcionarios.add((Funcionario) pF);
+                    pF.setCargo(cargoEscolhido);
+                    funcionarios.add(pF);
                     System.out.println("----------------------------------");
                     System.out.println("Funcionário cadastrado com sucesso!");
                     pF.quemSouEu();
                     System.out.println("CPF: " + pF.getCpf());
                     System.out.println("Email: " + pF.getEmail());
                     System.out.println("Telefone: " + pF.getTelefone());
-                    System.out.println("Salário: " + ((Funcionario) pF).getSalario());
-                    System.out.println("Matrícula: " + ((Funcionario) pF).getMatricula());
+                    System.out.println("Salário: " + pF.getSalario());
+                    System.out.println("Matrícula: " + pF.getMatricula());
                     System.out.println("Idade: " + pF.getIdade());
                     System.out.println("A função deste funcionário é " + cargoEscolhido);
                 }
@@ -180,11 +178,11 @@ public class Main {
                     String nomeAnimal = sc.nextLine();
 
                     if (opcaoServico == 1) {
-                        System.out.println("Serviço de Banho agendado para " + nomeAnimal + "\nQuem vai fazer esse serviço é: " + CARGO.Tosador);
+                        System.out.println("Serviço de " + SERVICO.Banho + " agendado para " + nomeAnimal + "\nQuem vai fazer esse serviço é: " + CARGO.Banhista);
                     } else if (opcaoServico == 2) {
-                        System.out.println("Serviço de Tosa agendado para " + nomeAnimal + "\nQuem vai fazer esse serviço é: " + CARGO.Banhista);
+                        System.out.println("Serviço de " + SERVICO.Tosa + " agendado para " + nomeAnimal + "\nQuem vai fazer esse serviço é: " + CARGO.Tosador);
                     } else if (opcaoServico == 3) {
-                        System.out.println("Serviço de Vacina agendado para " + nomeAnimal + "\nQuem vai fazer esse serviço é: " + CARGO.Veterinario);
+                        System.out.println("Serviço de " + SERVICO.Vacina + " agendado para " + nomeAnimal + "\nQuem vai fazer esse serviço é: " + CARGO.Veterinario);
                     } else {
                         System.out.println("Opção inválida!");
                     }
@@ -210,7 +208,7 @@ public class Main {
                 case 8 -> System.out.println("Saindo do sistema...");
                 default -> System.out.println("Opção inválida!");
             }
-        } while (y != 7);
+        } while (y != 8);
 
         sc.close();
         sc2.close();
@@ -226,9 +224,9 @@ public class Main {
         return null;
     }
 
-    private static Pessoa buscarFuncionarioPorMatricula(String cpf, ArrayList<Funcionario> funcionarios) {
+    private static Pessoa buscarFuncionarioPorMatricula(String matricula, ArrayList<Funcionario> funcionarios) {
         for (Funcionario funcionario : funcionarios) {
-            if (funcionario.getCpf().equals(cpf)) {
+            if (funcionario.getMatricula().equals(matricula)) {
                 return funcionario;
             }
         }
