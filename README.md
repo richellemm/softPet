@@ -18,7 +18,7 @@ O *Soft Pet* é um sistema desenvolvido para gerenciar o cadastro de clientes, a
 ## Estrutura de Diretórios
 
 SoftPet/ <br>
-│
+│ <br>
 ├── README.md <br>
 ├── .gitignore <br>
 ├── desktop.ini <br>
@@ -26,17 +26,17 @@ SoftPet/ <br>
 ├── src/ <br>
 │   ├── main/ <br>
 │   │   └── Main.java <br>
-│   │
+│   │ <br>
 │   ├── model/ <br>
 │   │   ├── Animal.java <br>
 │   │   ├── Cliente.java <br>
 │   │   ├── Funcionario.java <br>
 │   │   ├── Pessoa.java <br>
 │   │   └── Remuneravel.java <br>
-│   │
+│   │ <br>
 │   ├── service/ <br>
 │   │   └── AnimalService.java <br>
-│   │
+│   │ <br>
 │   └── enums/ <br>
 │       ├── Cargo.java <br>
 │       └── Servico.java <br>
