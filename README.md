@@ -17,29 +17,29 @@ O *Soft Pet* é um sistema desenvolvido para gerenciar o cadastro de clientes, a
 
 ## Estrutura de Diretórios
 
-SoftPet/
+SoftPet/ <br>
 │
-├── README.md
-├── .gitignore
-├── desktop.ini
-├── softPet.iml
-├── src/
-│   ├── main/
-│   │   └── Main.java
+├── README.md <br>
+├── .gitignore <br>
+├── desktop.ini <br>
+├── softPet.iml <br>
+├── src/ <br>
+│   ├── main/ <br>
+│   │   └── Main.java <br>
 │   │
-│   ├── model/
-│   │   ├── Animal.java
-│   │   ├── Cliente.java
-│   │   ├── Funcionario.java
-│   │   ├── Pessoa.java
-│   │   └── Remuneravel.java
+│   ├── model/ <br>
+│   │   ├── Animal.java <br>
+│   │   ├── Cliente.java <br>
+│   │   ├── Funcionario.java <br>
+│   │   ├── Pessoa.java <br>
+│   │   └── Remuneravel.java <br>
 │   │
-│   ├── service/
-│   │   └── AnimalService.java
+│   ├── service/ <br>
+│   │   └── AnimalService.java <br>
 │   │
-│   └── enums/
-│       ├── Cargo.java
-│       └── Servico.java 
+│   └── enums/ <br>
+│       ├── Cargo.java <br>
+│       └── Servico.java <br>
 
 ## Conceitos Implementados
 - Encapsulamento: Os atributos das classes estão protegidos e acessíveis por meio de métodos getters e setters.
@@ -59,7 +59,7 @@ Ao executar a aplicação, o menu principal será exibido com as seguintes opç�
 4. Atualizar Dados de um Animal
 5. Deletar um Animal
 6. Escolher Serviço para um Animal
-7. ⁠*Adicionar bônus a funcionário*
+7. ⁠Adicionar bônus a funcionário
 7. Sair
 
 ## Exemplos de Uso
