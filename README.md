@@ -64,11 +64,11 @@ Ao executar a aplicação, o menu principal será exibido com as seguintes opç�
 
 ## Exemplos de Uso
 - Cadastrar Cliente:
-    - Insira o nome, CPF, e-mail, telefone e endereço.
+- Insira o nome, CPF, e-mail, telefone e endereço.
 - Cadastrar Animal:
 - ⁠Associe o animal a um cliente pelo CPF e preencha informações como espécie, raça, idade e peso.
 
-##Autores:
+## Autores:
 - Érika Veloso
 - ⁠Júlia Matos
 - ⁠Manuela Aimê
