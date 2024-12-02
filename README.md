@@ -17,25 +17,25 @@ O *Soft Pet* é um sistema desenvolvido para gerenciar o cadastro de clientes, a
 
 ## Estrutura de Diretórios
 
-SoftPet/
-├── README.md
-├── .gitignore
-├── desktop.ini
-├── softPet.iml
-└── src/
-    ├── main/
-    │   └── Main.java
-    ├── model/
-    │   ├── Animal.java
-    │   ├── Cliente.java
-    │   ├── Funcionario.java
-    │   ├── Pessoa.java
-    │   └── Remuneravel.java
-    ├── service/
-    │   └── AnimalService.java
-    └── enums/
-        ├── Cargo.java
-        └── Servico.java
+SoftPet/ <br>
+<br> ├── README.md
+<br> ├── .gitignore
+<br> ├── desktop.ini
+<br> ├── softPet.iml
+<br> └── src/
+ <br>   ├── main/
+ <br>   │   └── Main.java
+<br>    ├── model/
+<br>    │   ├── Animal.java
+<br>    │   ├── Cliente.java
+<br>    │   ├── Funcionario.java
+<br>    │   ├── Pessoa.java
+<br>    │   └── Remuneravel.java
+ <br>   ├── service/
+<br>    │   └── AnimalService.java
+<br>    └── enums/
+ <br>       ├── Cargo.java
+  <br>      └── Servico.java
 
 ## Conceitos Implementados
 - Encapsulamento: Os atributos das classes estão protegidos e acessíveis por meio de métodos getters e setters.
